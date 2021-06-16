@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <title>Tontang machine</title>
+    <meta charset="UTF-8">
+<body>
+<h2>------------</h2>
+<h2>Plase put your Money</h2>
+<form name="myForm">
+  <label for="tang">Payout :</label><br>
+  <input type="number" id="Payout" name="Payout" value="0"><br>
+  <label for="tang">Tang :</label><br>
+  <input type="number" id="tang" name="tang" value="0"><br>
+  <button type="button" onclick="Tontang()">Submit</button>
+</form>
+<table border="1" style="text-align: center; ">
+    <tr>
+        <th>หัวข้อ</th>
+        <th>1000</th>
+        <th>500</th>
+        <th>100</th>
+        <th>50</th>
+        <th>20</th>
+        <th>10</th>
+        <th>5</th>
+        <th>1</th>
+    </tr>
+    <tr>
+        <td>จำนวนเงินที่ต้องทอน</td>
+        <td ><p id="BB1000"></p></td>
+        <td><p id="BB500"></p></td>
+        <td><p id="BB100"></p></td>
+        <td><p id="BB50"></p></td>
+        <td><p id="BB20"></p></td>
+        <td><p id="BB10"></p></td>
+        <td><p id="BB5"></p></td>
+        <td><p id="BB1"></p></td>
+    </tr>
+    <tr>
+        <td colspan="7"></td>  
+        <td>ทอน</td>
+        <td><p id="ton"></p></td>
+    </tr>
+    <tr>
+        <td>จำนวนเงินทอนคงเหลือ</td>
+        <td ><p id="B1000"></p></td>
+        <td><p id="B500"></p></td>
+        <td><p id="B100"></p></td>
+        <td><p id="B50"></p></td>
+        <td><p id="B20"></p></td>
+        <td><p id="B10"></p></td>
+        <td><p id="B5"></p></td>
+        <td><p id="B1"></p></td>
+    </tr>
+    <footer>
+        <td colspan="7"></td>  
+        <td>รวม</td>
+        <td><p id="Total"></p></td>
+    </footer>
+</table>
+</body>
+</html>
+<script>
+    var Total 
+    var B1000=0,B500=10,B100=50,B50=50,B20=50,B20=50,B10=20,B5=20,B1=100
+    Total = (B1000*1000)+(B500*500)+(B100*100)+(B50*50)+(B20*20)+(B10*10)+(B5*5)+(B1*1)
+document.getElementById("Total").innerHTML = Total
+document.getElementById("B1000").innerHTML = B1000
+document.getElementById("B500").innerHTML = B500
+document.getElementById("B100").innerHTML = B100
+document.getElementById("B50").innerHTML = B50
+document.getElementById("B20").innerHTML = B20
+document.getElementById("B10").innerHTML = B10
+document.getElementById("B5").innerHTML = B5
+document.getElementById("B1").innerHTML = B1
+Tontang = function(x,y) {
+var ton   
+var x = document.forms["myForm"]["tang"].value;
+var y = document.forms["myForm"]["Payout"].value;
+ton = x-y
+document.getElementById("ton").innerHTML = ton
+  var DB1000 = x/1000
+  x = x%1000
+  B1000 = B1000 + Math.floor(DB1000)
+  var DB500 = x/500 
+  x = x%500
+  B500 = B500 + Math.floor(DB500)
+  var DB100 = x/100 
+  x = x%100 
+  B100 = B100+ Math.floor(DB100)
+  var DB50 = x/50 
+  x = x%50
+  B50 = B50+ Math.floor(DB50)
+  var DB20 = x/20
+  x = x%20 
+  B20 = B20+ Math.floor(DB20)
+  var DB10 = x/10
+  x = x%10 
+  B10 =B10 +Math.floor(DB10)
+  var DB5 = x/5
+  x = x%5
+  B5 = B5+ Math.floor(DB5)
+  var DB1 = x/1
+  x = x%1
+  B1 = B1+ Math.floor(DB1) 
+  //ton
+  var DB1000 = ton/1000
+  ton = ton%1000
+  B1000 = B1000 - Math.floor(DB1000)
+  var DB500 = ton/500 
+  ton = ton%500
+  B500 = B500 - Math.floor(DB500)
+  var DB100 = ton/100 
+  ton = ton%100 
+  B100 = B100- Math.floor(DB100)
+  var DB50 = ton/50 
+  ton = ton%50
+  B50 = B50- Math.floor(DB50)
+  var DB20 = ton/20
+  ton = ton%20 
+  B20 = B20- Math.floor(DB20)
+  var DB10 = ton/10
+  ton = ton%10 
+  B10 =B10 -Math.floor(DB10)
+  var DB5 = ton/5
+  ton = ton%5
+  B5 = B5- Math.floor(DB5)
+  var DB1 = ton/1
+  ton = ton%1
+  B1 = B1- Math.floor(DB1)
+  //xxxทอน 
+document.getElementById("BB1000").innerHTML = Math.floor(DB1000)
+document.getElementById("BB500").innerHTML = Math.floor(DB500)
+document.getElementById("BB100").innerHTML = Math.floor(DB100)
+document.getElementById("BB50").innerHTML = Math.floor(DB50)
+document.getElementById("BB20").innerHTML = Math.floor(DB20)
+document.getElementById("BB10").innerHTML = Math.floor(DB10)
+document.getElementById("BB5").innerHTML = Math.floor(DB5)
+document.getElementById("BB1").innerHTML = Math.floor(DB1)
+//xxxปัจุบัน
+document.getElementById("B1000").innerHTML = B1000
+document.getElementById("B500").innerHTML = B500
+document.getElementById("B100").innerHTML = B100
+document.getElementById("B50").innerHTML = B50
+document.getElementById("B20").innerHTML = B20
+document.getElementById("B10").innerHTML = B10
+document.getElementById("B5").innerHTML = B5
+document.getElementById("B1").innerHTML = B1
+Total = (B1000*1000)+(B500*500)+(B100*100)+(B50*50)+(B20*20)+(B10*10)+(B5*5)+(B1*1)
+document.getElementById("Total").innerHTML = Total
+
+}
+</script>
